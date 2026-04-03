@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hybrid Pothole Detection</title>
+    <!-- Modern Typography: Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+    <div class="blob-bg"></div>
+    <div class="blob-bg blob-bg-2"></div>
+    
+    <div class="container glass-panel">
+        <header>
+            <h1>Road <span>Guard</span></h1>
+            <p>Hybrid AI Pothole Detection with YOLO & Depth Models</p>
+        </header>
+
+        <main>
+            <!-- Upload Area -->
+            <div id="upload-section" class="upload-area">
+                <input type="file" id="video-upload" accept="video/*" hidden>
+                <div class="upload-content">
+                    <svg class="upload-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                        <polyline points="17 8 12 3 7 8"></polyline>
+                        <line x1="12" y1="3" x2="12" y2="15"></line>
+                    </svg>
+                    <h2>Drag & Drop a Video Here</h2>
+                    <p>or click to browse your files</p>
+                    <button class="btn browse-btn" id="browse-btn">Browse Video</button>
+                </div>
+            </div>
+
+            <!-- Loading State -->
+            <div id="loading-section" class="loading-state hidden">
+                <div class="spinner"></div>
+                <h2>Running Pipeline...</h2>
+                <p>This may take a few minutes depending on the video length.</p>
+                <div class="processing-steps">
+                    <span>1. YOLO Proposal</span>
+                    <span class="dot"></span>
+                    <span>2. Depth Scoring</span>
+                    <span class="dot"></span>
+                    <span>3. Fusion & Tracking</span>
+                </div>
+            </div>
+
+            <!-- Results Section -->
+            <div id="results-section" class="results-state hidden">
+                <div class="summary-card">
+                    <h2>Analysis Complete</h2>
+                    <div class="count-display">
+                        <span class="count-number" id="pothole-count">0</span>
+                        <span class="count-label">Potholes Detected</span>
+                    </div>
+                    <button class="btn btn-secondary" id="reset-btn">Analyze Another Video</button>
+                </div>
+
+                <div class="gallery-container">
+                    <h3>Detected Instances</h3>
+                    <div class="gallery-grid" id="gallery-grid">
+                        <!-- Items will be injected via JS -->
+                    </div>
+                </div>
+            </div>
+            
+        </main>
+    </div>
+
+    <!-- Error Toast -->
+    <div id="error-toast" class="toast hidden">
+        <div class="toast-content">
+            <svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round" class="css-i6dzq1"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="8" x2="12" y2="12"></line><line x1="12" y1="16" x2="12.01" y2="16"></line></svg>
+            <span id="error-msg">An error occurred!</span>
+        </div>
+    </div>
+
+    <script src="/app.js"></script>
+</body>
+</html>
