@@ -1,0 +1,109 @@
+# ─── Videos & raw media ───────────────────────────────────────────────
+*.mp4
+*.mov
+*.avi
+*.mkv
+*.webm
+*.flv
+*.wmv
+
+# ─── Model weights (large binaries — use Git LFS or cloud storage) ────
+*.pt
+*.pth
+*.onnx
+*.engine
+*.tflite
+*.weights
+*.h5
+*.pb
+*.ckpt
+*.safetensors
+yolo11*.pt
+yolov8*.pt
+yolov5*.pt
+
+# ─── Training / inference outputs ─────────────────────────────────────
+runs/
+runs_detect_runs_*/
+wandb/
+mlruns/
+lightning_logs/
+checkpoints/
+outputs/
+tmp/
+
+# ─── Extracted frames (regenerable from source video) ─────────────────
+video_frames/
+video_frames_every10/
+frames/
+crops/
+
+# ─── Datasets (large — re-download from Roboflow/source) ──────────────
+Pavement_Distress_1.v1-video_dataset_1.yolov11/
+road damage det.v4i.yolov11*/
+*.v1-*.yolov11/
+*.v[0-9]*.yolov[0-9]*/
+datasets/
+data/
+*.zip
+*.tar
+*.tar.gz
+*.7z
+*.rar
+
+# ─── Image dumps that aren't part of source ───────────────────────────
+*.jpg
+*.jpeg
+*.png
+*.bmp
+*.tif
+*.tiff
+*.webp
+# (allow images that ARE part of the repo — re-add explicitly with !path/file.png)
+
+# ─── Python ───────────────────────────────────────────────────────────
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+.venv/
+venv/
+env/
+ENV/
+.python-version
+.ipynb_checkpoints/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.tox/
+htmlcov/
+.coverage
+.coverage.*
+*.egg-info/
+build/
+dist/
+pip-wheel-metadata/
+
+# ─── Jupyter ──────────────────────────────────────────────────────────
+.ipynb_checkpoints/
+
+# ─── IDE / editor / OS ────────────────────────────────────────────────
+.vscode/
+.idea/
+*.swp
+*.swo
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# ─── Secrets ──────────────────────────────────────────────────────────
+.env
+.env.*
+*.key
+*.pem
+credentials.json
+
+# ─── Misc ─────────────────────────────────────────────────────────────
+*.log
+node_modules/
